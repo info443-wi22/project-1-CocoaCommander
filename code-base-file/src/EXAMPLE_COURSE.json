@@ -1,0 +1,133 @@
+{
+    "department": "CSE",
+    "number": 373,
+    "courseName": "Data Structures And Algorthms",
+    "courseDesc": "Fundamental algorithms and data structures for implementation. Techniques for solving problems by programming. Linked lists, stacks, queues, directed graphs. Trees: representations, traversals. searching (hashing, binary search trees, multiway trees). Garbage collection, memory management. internal and external sorting. intended for non-majors.",
+    "preReqs": "CSE 143",
+    "quarter": "Winter 2020",
+    "genEd": "None",
+    "credits": 4,
+    "curriculum": "Computer Science and Engineering, Seattle campus",
+    "courseSections": [
+        {
+            "sectionName": "A", 
+            "instructorFName": "Vanessa",
+            "instructorLName": "Sugiharto",
+            "classType": "Lecture",
+            "room": "Remote",
+            "spotsOccupied": 120,
+            "spotsTotal": 120,
+            "schedule": [
+                {
+                    "day": "Monday", 
+                    "startTime": "3:30 PM", 
+                    "endTime": "4:20 PM"
+                },
+                {
+                    "day": "Wednesday", 
+                    "startTime": "3:30 PM", 
+                    "endTime": "4:20 PM"
+                },
+                {
+                    "day": "Friday", 
+                    "startTime": "3:30 PM", 
+                    "endTime": "4:20 PM"
+                }
+            ],
+            "sections": [
+                {
+                    "sectionName": "AA", 
+                    "instructorFName": "Mash",
+                    "instructorLName": "Kyrielight",
+                    "classType": "Quiz",
+                    "room": "Remote",
+                    "spotsOccupied": 60,
+                    "spotsTotal": 60,
+                    "schedule": [
+                        {
+                            "day": "Monday", 
+                            "startTime": "9:30 AM", 
+                            "endTime": "10:20 AM"
+                        }
+                    ]
+                },
+                {
+                    "sectionName": "AB", 
+                    "instructorFName": "Mirai",
+                    "instructorLName": "Kuriyama",
+                    "classType": "Quiz",
+                    "room": "Remote",
+                    "spotsOccupied": 60,
+                    "spotsTotal": 60,
+                    "schedule": [
+                        {
+                            "day": "Tuesday", 
+                            "startTime": "9:30 AM", 
+                            "endTime": "10:20 AM"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "sectionName": "B", 
+            "instructorFName": "Kasumi",
+            "instructorLName": "Yoshizawa",
+            "classType": "Lecture",
+            "room": "Remote",
+            "spotsOccupied": 120,
+            "spotsTotal": 120,
+            "schedule": [
+                {
+                    "day": "Monday", 
+                    "startTime": "1:30 PM", 
+                    "endTime": "2:20 PM"
+                },
+                {
+                    "day": "Wednesday", 
+                    "startTime": "1:30 PM", 
+                    "endTime": "2:20 PM"
+                },
+                {
+                    "day": "Friday", 
+                    "startTime": "1:30 PM", 
+                    "endTime": "2:20 PM"
+                }
+            ],
+            "sections": [
+                {
+                    "sectionName": "BA", 
+                    "instructorFName": "Sumire",
+                    "instructorLName": "Yoshizawa",
+                    "classType": "Quiz",
+                    "room": "Remote",
+                    "spotsOccupied": 60,
+                    "spotsTotal": 60,
+                    "schedule": [
+                        {
+                            "day": "Monday", 
+                            "startTime": "9:30 AM",
+                            "endTime": "10:20 AM"
+                        }
+                    ]
+                },
+                {
+                    "sectionName": "BB", 
+                    "instructorFName": "Mikasa",
+                    "instructorLName": "Ackerman",
+                    "classType": "Quiz",
+                    "room": "Remote",
+                    "spotsOccupied": 60,
+                    "spotsTotal": 60,
+                    "schedule": [
+                        {
+                            "day": "Thursday", 
+                            "startTime": "9:30 AM", 
+                            "endTime": "10:20 AM"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,96 @@
+{
+    "studentID": 1865214,
+    "studentFName": "Ryan",
+    "studentLName": "Lee",
+    "major": "Informatics",
+    "waitlist":[],
+    "classList":[
+        {
+            "department": "INFO",
+            "number": 340,
+            "credits": 5,
+            "genEd": "",
+            "sections": [
+                {
+                    "sectionName": "A",
+                    "instructorFName": "Joel",
+                    "instructorLName": "Ross",
+                    "classType": "Lecture",
+                    "room": "Remote",
+                    "schedule": [
+                        {"day": "Monday", "startTime": "8:30 AM", "endTime": "10:20 AM"},
+                        {"day": "Wednesday", "startTime": "8:30 AM", "endTime": "10:20 AM"}
+                    ]
+                },
+                {
+                    "sectionName": "AB",
+                    "instructorFName": "Khoa",
+                    "instructorLName": "Luong",
+                    "classType": "Lab",
+                    "room": "Remote",
+                    "schedule": [
+                        {"day": "Monday", "startTime": "9:30 AM", "endTime": "10:20 AM"}
+                    ]
+                }
+            ]
+        },
+        {
+            "department": "INFO",
+            "number": 330,
+            "credits": 5,
+            "genEd": "",
+            "sections": [
+                {
+                    "sectionName": "B",
+                    "instructorFName": "Greg",
+                    "instructorLName": "Hay",
+                    "classType": "Lecture",
+                    "room": "remote",
+                    "schedule": [
+                        {"day": "Tuesday", "startTime": "1:30 PM", "endTime": "3:20 PM"},
+                        {"day": "Thursday", "startTime": "1:30 PM", "endTime": "3:20 PM"}
+                    ]
+                },
+                {
+                    "sectionName": "BA",
+                    "instructorFName": "Connor",
+                    "instructorLName": "Voelk",
+                    "classType": "Lab",
+                    "room": "remote",
+                    "schedule": [
+                        {"day": "Tuesday", "startTime": "4:30 PM", "endTime": "5:20 PM"}
+                    ]
+                }
+            ]
+        },
+        {
+            "department": "INFO",
+            "number": 380,
+            "credits": 5,
+            "genEd": "",
+            "sections": [ 
+                {
+                    "sectionName": "A",
+                    "instructorFName": "Richard",
+                    "instructorLName": "Sturmann",
+                    "classType": "Lecture",
+                    "room": "remote",
+                    "schedule": [
+                        {"day": "Monday", "startTime": "1:30 PM", "endTime": "3:20 PM"},
+                        {"day": "Wednesday", "startTime": "1:30 PM", "endTime": "3:20 PM"}
+                    ]
+                },
+                {
+                    "sectionName": "AC",
+                    "instructorFName": "Rose",
+                    "instructorLName": "Paquet",
+                    "classType": "Lab",
+                    "room": "remote",
+                    "schedule": [
+                        {"day": "Tuesday", "startTime": "10:30 AM", "endTime": "11:20 AM"}
+                    ]
+                }
+            ]
+        }
+    ]
+}

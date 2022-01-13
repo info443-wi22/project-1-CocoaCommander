@@ -1,0 +1,344 @@
+/* Include custom colors and sizing */
+
+.courseHeading {
+  color: #B7A57A;
+}
+
+hr {
+  background-color:#B7A57A;
+}
+
+.headerLink, .headerLink:hover {
+  color: white;
+  text-decoration-line: none;
+}
+
+.mainContent {
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+.headerDiv {
+  background-color: #4B2F83;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  width: 80%;
+  color: white;
+  margin: 20px;
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-size: 10px;
+  background-color: lightgrey;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoImg{
+  width: 170px;
+  padding-bottom: 20px;
+}
+
+.courseRow {
+  text-align: center;
+}
+
+.courseTable {
+  width:100%;
+  table-layout: fixed;
+}
+
+h2, h3, h4, p{
+  margin: 0px;
+}
+
+.flexbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.overviewTable {
+  padding: 0 5px 0 0;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+
+.overviewTable td{
+  vertical-align: top;
+}
+
+.courseTable {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+
+.courseTable td {
+  border-top: thin solid; 
+  border-bottom: thin solid;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.courseTable td:first-child {
+   border-left: thin solid;
+   border-top-left-radius: 10px;
+   border-bottom-left-radius: 10px;
+}
+
+.courseTable td:last-child {
+  border-right: thin solid;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 80px;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.courseStatus {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.disabled {
+  color: lightgrey;
+}
+
+.waitlistTable {
+  width: 95%;
+}
+
+.waitlistTable tr td{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  color: white;
+}
+
+.navList {
+  display: inline;
+  margin: 5%;
+  font-size: 13px;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+
+td {
+  font-size: 13px;
+  padding: 0 15px
+}
+
+h4 {
+  font-size: 15px;
+}
+
+p {
+  font-size: 14px;
+}
+
+.fa {
+  font-size: 19px;
+}
+
+
+.waitlistTable tr td:nth-child(4), .waitlistTable tr td:nth-child(5), .waitlistTable tr td:nth-child(6) {
+  display: none;
+}
+
+.footerText {
+  color: #4B2F83;
+  font-size: 14px;
+  text-decoration: none;
+  padding-top: 7px;
+}
+
+.scheduleImg {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  height: 220px;
+  padding-top: 20px;
+}
+
+
+/* iPad size */
+
+@media (min-width: 768px) {
+
+  .waitlistTable tr td:nth-child(4), .waitlistTable tr td:nth-child(5), .waitlistTable tr td:nth-child(6) {
+    display: table-cell;
+  }
+
+  .courseTable td:last-child {
+    width: auto;
+  }
+
+  .mainContent {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .header {
+    margin:50px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+  
+  h2 {
+    font-size: 25px;
+  }
+  
+  h3 {
+    font-size: 20px;
+  }
+  
+  td{
+    font-size: 17px;
+  }
+
+  p, .navList {
+    font-size: 17px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  .fa {
+    font-size: 24px;
+  }
+
+  .logoImg {
+    width: 300px;
+    padding-bottom: 30px;
+  }
+
+  .footer{
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .footerText {
+    font-size: 17px;
+  }
+  .scheduleImg {
+    height: 450px;
+  }
+
+}
+
+
+/* Large tablet and up size */
+
+@media (min-width: 992px) {
+  .mainContent {
+    padding-left: 80px;
+    padding-right: 80px;
+    max-width: 1100px;
+  }
+
+  .overviewTable {
+    border-spacing: 0 30px;
+  }
+
+  .overviewTable td{
+    padding:0 30px;
+  }
+
+  .header {
+    margin-left:80px;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+  
+  h2 {
+    font-size: 35px;
+  }
+  
+  h3 {
+    font-size: 30px;
+  }
+  
+  td{
+    font-size: 18px;
+  }
+
+  h4 {
+    font-size: 23px;
+  }
+
+  p, .navList {
+    font-size: 19px;
+  }
+
+  .fa {
+    font-size: 70px;
+  }
+
+  .fa {
+    font-size: 28px;
+  }
+
+  .logoImg{
+    width: 500px;
+    padding-bottom: 50px;
+  }
+
+  .footer{
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .footerText {
+    font-size: 19px;
+  }
+
+  .scheduleImg {
+    height: 600px;
+  }
+
+
+}
