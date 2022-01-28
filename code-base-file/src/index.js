@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import App from './App';
 import SAMPLE_STUDENT from './EXAMPLE_STUDENT.json';
@@ -8,6 +8,11 @@ import SAMPLE_COURSE from './EXAMPLE_COURSE.json';
 import firebase from 'firebase/app';
 import 'firebase/database';
 import './style.css';
+import CoursePage from './Pages/CoursePage';
+import WaitlistPage from './waitlistPage';
+import AboutCoursePage from './aboutCoursePage';
+import { Header } from './Components/App/Header';
+import { Footer } from './Components/App/Footer';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAsZ8v2EvOi5_KXwe_JdPv_hRGSNjnDRHM",
@@ -23,10 +28,16 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App student={SAMPLE_STUDENT} course={SAMPLE_COURSE}/>
-    </BrowserRouter>
-  </React.StrictMode>,
+    <Router>
+      <Header />
+      <Routes>
+        <Route path={"/"} element={<App/>}>
+          <Route index element={<CoursePage student={SAMPLE_STUDENT} course={SAMPLE_COURSE} />} />
+          <Route path={"waitlist"} element={<WaitlistPage/>} />
+          <Route path={"about"} element={<AboutCoursePage/>} />
+        </Route>
+      </Routes>
+      <Footer/>
+    </Router>,
   document.getElementById('root')
 );
