@@ -5,7 +5,7 @@ export function CourseSectionsList(props) {
 
     let handleCourseAdd = props.handleCourseAdd;
     let courseSections = props.courseSections;
-    let sectionChunks = courseSections.map((sectionChunk) => {
+    let sectionChunks = courseSections.map((sectionChunk, i) => {
         let sectionRows = (
             <MainSectionCards
                 sectionChunk={sectionChunk}
@@ -13,7 +13,8 @@ export function CourseSectionsList(props) {
                 handleCourseAdd={handleCourseAdd}
                 course={props.course}
                 cantAdd={props.cantAdd}
-                handleOverlapErrors={props.handleOverlapErrors} />
+                handleOverlapErrors={props.handleOverlapErrors}
+                key={i} />
         );
         return sectionRows;
     });

@@ -33,7 +33,6 @@ export function CourseOverview(props) {
                     </tbody>
                 </table>
             </div>
-            <p>If you need help on how to register or waitlist a course, <Link to="/course/about"> click here!</Link></p>
         </div>
     );
 }

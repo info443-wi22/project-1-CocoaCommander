@@ -7,12 +7,12 @@ import {
     validateCourseAdditions, 
     doesClassOverlap 
 } from '../Logic/coursePageLogic';
-import { RegisterPotentialClasses } from '../Components/CoursePage/RegisterPotentialClasses';
-import { CoursesToAdd } from '../Components/CoursePage/CoursesToAdd';
-import { SectionOverlapErrors } from '../Components/CoursePage/SectionOverlapErrors';
-import { CourseOverview } from '../Components/CoursePage/CourseOverview';
-import { CourseSectionsList } from '../Components/CoursePage/CourseSectionsList';
-import { ClassOverlapAlerts } from '../Components/CoursePage/ClassOverlap';
+import { RegisterPotentialClasses } from '../Components/coursePage/RegisterPotentialClasses';
+import { CoursesToAdd } from '../Components/coursePage/CoursesToAdd';
+import { SectionOverlapErrors } from '../Components/coursePage/SectionOverlapErrors';
+import { CourseOverview } from '../Components/coursePage/CourseOverview';
+import { CourseSectionsList } from '../Components/coursePage/CourseSectionsList';
+import { ClassOverlapAlerts } from '../Components/coursePage/ClassOverlap';
 
 const CoursePage = ({
     student,

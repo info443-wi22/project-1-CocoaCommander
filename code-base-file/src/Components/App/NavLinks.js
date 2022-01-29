@@ -5,9 +5,12 @@ import { Link } from "react-router-dom";
 export function NavLinks() {
     return (
         <nav>
-            <Link to="course">Course</Link>
-            <Link to="waitlist">Waitlist</Link>
-            <Link to="about">About</Link>
+            <ul>
+                <li className="navList"><Link className="navLink" to="">Course</Link></li>
+                <li className="navList"><Link className="navLink" to="waitlist">Waitlist</Link></li>
+                <li className="navList"><Link className="navLink" to="about">About</Link></li>
+            </ul>
+
         </nav>
     );
 }

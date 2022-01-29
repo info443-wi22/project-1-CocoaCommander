@@ -1,22 +1,23 @@
-import React, { useState } from 'react';
-import { Link, Outlet} from "react-router-dom";
+import React from 'react';
+import { Routes, Route } from "react-router-dom";
 import 'font-awesome/css/font-awesome.min.css';
 import CoursePage from './Pages/CoursePage'
 import WaitlistPage from './waitlistPage'
 import AboutCoursePage from './aboutCoursePage'
-import { Footer } from './Components/App/Footer';
+import SAMPLE_STUDENT from './EXAMPLE_STUDENT.json';
+import SAMPLE_COURSE from './EXAMPLE_COURSE.json';
 import { Header } from './Components/App/Header';
 
-const App = ({
-    student,
-    course
-}) => {
+const App = () => {
+    return (
+        <>
+            <Routes>
+                <Route path={"/"} element={<CoursePage student={SAMPLE_STUDENT} course={SAMPLE_COURSE} />} />
+                <Route path={"/Waitlist"} element={<WaitlistPage />} />
+                <Route path={"/About"} element={<AboutCoursePage />} />
+            </Routes>
+        </>
 
-
-    return(
-        <div>
-            <Outlet />
-        </div>
     )
 }
 

@@ -10,9 +10,9 @@ export function ClassOverlapAlerts({
 }) {
     let overlapMsgArr = checkCurrentScheduleForOverlapsWithGivenCourse(classList, courseData, illegalClass, OVERLAPS);
 
-    overlapMsgArr = overlapMsgArr.map((message) => {
+    overlapMsgArr = overlapMsgArr.map((message, i) => {
         return (
-            <Alert color="primary">
+            <Alert color="primary" key={i}>
                 {message}
             </Alert>
         );
