@@ -79,9 +79,7 @@ function WaitlistCourses(props) {
                             <td>{section.room}</td>
                             <td>{schedule}</td>
                             <td>{section.schedule[0].startTime + ' - ' + section.schedule[0].endTime}</td>
-                            <td>
-                                Pending
-                            </td>
+                            <td>{"Pending"}</td>
                             <td>
                                 <i className="fa fa-trash" onClick={deleteCourses(setWaitlistData=props.setWaitlistData,dataRef=props.dataRef)}></i>
                             </td>
@@ -95,11 +93,14 @@ function WaitlistCourses(props) {
 
     return (
         <div className="section">
+        {toDisplay.length === 0 ? "You aren't on the waitlist for any classes yet! (You need to click the register button twice.)" : `${
         <table className="table table-hover courseTable waitlistTable">
             <tbody>
-                {toDisplay.length === 0 ? "You aren't on the waitlist for any classes yet! (You need to click the register button twice.)" : toDisplay}
+                {toDisplay}
             </tbody>
         </table>
+        }`}
+
     </div>
     );
 }
