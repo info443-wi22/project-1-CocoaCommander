@@ -9,6 +9,7 @@ import firebase from 'firebase/app';
 import 'firebase/database';
 import { ClassOverlapAlerts } from '../Components/coursePage/ClassOverlap'
 import { doesClassOverlap } from '../Logic/coursePageLogic'
+import { initializeApp } from 'firebase/app';
 
 const firebaseConfig = {
     apiKey: "AIzaSyAsZ8v2EvOi5_KXwe_JdPv_hRGSNjnDRHM",
@@ -21,7 +22,7 @@ const firebaseConfig = {
     measurementId: "G-QJ15MH0V1F"
   };
   
-  firebase.initializeApp(firebaseConfig);
+const firebaseApp = initializeApp(firebaseConfig);
 
 describe('App renders correctly', () => {
     
@@ -40,7 +41,7 @@ describe('App renders correctly', () => {
         );
         const leftClick = {button: 0}
         userEvent.click(screen.getByText("Waitlist"), leftClick);
-        expect(screen.getByText("You aren't on the waitlist for any classes yet! (You need to click the register button twice.)")).toBeInTheDocument();
+        expect(screen.getByText("Check what you've registered for on the waitlist and their statuses here. You can click the trash button to delete the main section and section of a class.")).toBeInTheDocument();
     });
 
     test('Navigating to About renders correctly', () => {
