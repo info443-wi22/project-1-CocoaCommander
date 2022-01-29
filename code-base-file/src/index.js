@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import App from './App';
 import SAMPLE_STUDENT from './EXAMPLE_STUDENT.json';
 import SAMPLE_COURSE from './EXAMPLE_COURSE.json';
-import firebase from 'firebase/app';
+import { initializeApp } from 'firebase/app';
 import 'firebase/database';
 import './style.css';
 
@@ -20,7 +20,7 @@ const firebaseConfig = {
   measurementId: "G-QJ15MH0V1F"
 };
 
-firebase.initializeApp(firebaseConfig);
+const firebaseApp = initializeApp(firebaseConfig);
 
 ReactDOM.render(
   <React.StrictMode>

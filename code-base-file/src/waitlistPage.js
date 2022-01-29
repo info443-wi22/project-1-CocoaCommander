@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import 'font-awesome/css/font-awesome.min.css';
 import firebase from 'firebase/app';
+import { getDatabase, ref, onValue} from "firebase/database";
 
 function WaitlistPage() {
-     // put data in here? not sure
+     const db = getDatabase();
 
     //extract courses from firebase
-    let ref = firebase.database().ref('student/schedule');
+    let dataRef = ref(db, 'student/schedule');
     let data = [];
 
-    ref.on("value", function(snapshot) {
+    onValue(dataRef, (snapshot) => {
         data = snapshot.val();
-    });
+      });
 
     const [waitlistData, setWaitlistData] = useState(data);
 
@@ -25,10 +26,17 @@ function WaitlistPage() {
                     You can click the trash button to delete the main section and section of a class.
                 </p>
             </div>
-            <WaitlistCourses waitlist={waitlistData} setWaitlistData={setWaitlistData}/>
+            <WaitlistCourses waitlist={waitlistData} setWaitlistData={setWaitlistData} dataRef={dataRef}/>
 
         </div>
     )
+}
+
+function deleteCourses(props) {
+    let coursesRef = props.dataRef;
+    console.log(coursesRef);
+    props.setWaitlistData([]);
+    coursesRef.remove();
 }
 
 function WaitlistCourses(props) {
@@ -36,11 +44,11 @@ function WaitlistCourses(props) {
     let waitlist = props.waitlist
     let toDisplay = [];
 
-    let deleteCourses = () => {
-        let coursesRef = firebase.database().ref('student/schedule');
-        props.setWaitlistData([]);
-        coursesRef.remove();
-    }
+    // let deleteCourses = () => {
+    //     let coursesRef = props.dataRef;
+    //     props.setWaitlistData([]);
+    //     coursesRef.remove();
+    // }
     
     if (waitlist !== null) {
         for (let i = 0; i < waitlist.length; i++) {
@@ -75,7 +83,7 @@ function WaitlistCourses(props) {
                                 Pending
                             </td>
                             <td>
-                                <i className="fa fa-trash" onClick={deleteCourses}></i>
+                                <i className="fa fa-trash" onClick={deleteCourses(setWaitlistData=props.setWaitlistData,dataRef=props.dataRef)}></i>
                             </td>
                         </tr>
                     );
