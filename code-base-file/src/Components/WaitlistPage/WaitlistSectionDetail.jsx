@@ -1,10 +1,15 @@
 import React from 'react';
 import { deleteCourses} from '../../Logic/waitlistPageLogic';
 
-export function WaitlistSectionDetail(props) {
+const WaitlistSectionDetail = (props) => {
     let courseName = props.courseName;
     let section = props.section;
     let schedule = props.schedule;
+    const setWaitlistData = props.setWaitlistData;
+    const dataRef = props.dataRef;
+    const waitlist = props.waitlist;
+
+    console.log(setWaitlistData);
 
     return (
         <tr>
@@ -18,8 +23,10 @@ export function WaitlistSectionDetail(props) {
             <td>{section.schedule[0].startTime + ' - ' + section.schedule[0].endTime}</td>
             <td>{"Pending"}</td>
             <td>
-                <i className="fa fa-trash" onClick={deleteCourses(setWaitlistData = props.setWaitlistData, dataRef=props.dataRef)}></i>
+                <i className="fa fa-trash" onClick={deleteCourses(setWaitlistData, dataRef, waitlist)}></i>
             </td>
         </tr>
     );
 }
+
+export default WaitlistSectionDetail;

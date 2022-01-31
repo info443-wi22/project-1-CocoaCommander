@@ -1,19 +1,19 @@
 import React from 'react';
 import WaitlistSectionDetail from './WaitlistSectionDetail';
 
-export function WaitlistCourseSections(props) {
+const WaitlistCourseSections = (props) => {
     let course = props.course;
-    console.log(course);
+    console.log(props.setWaitlistData);
     let courseName = course.department + " " + course.number + " (" + course.credits + ")";
-    return course.courseSections.map((section) => {
+    return course.courseSections.map((section, i) => {
         let schedule = getScheduleDay(section)
         return (
-            <WaitlistSectionDetail courseName={courseName} section={section} schedule={schedule} setWaitlistData={props.setWaitlistData} dataRef={props.dataRef}/>
+            <WaitlistSectionDetail courseName={courseName} section={section} schedule={schedule} setWaitlistData={props.setWaitlistData} dataRef={props.dataRef} waitlist={props.waitlist} key={i}/>
         );
     });
 }
 
-export function getScheduleDay(section) {
+function getScheduleDay(section) {
     let schedule = "";
     for (let j = 0; j < section.schedule.length; j++) {
         switch (section.schedule[j].day) {
@@ -29,3 +29,5 @@ export function getScheduleDay(section) {
     }
     return schedule;
 }
+
+export default WaitlistCourseSections;

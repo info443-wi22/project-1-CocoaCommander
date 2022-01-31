@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import 'font-awesome/css/font-awesome.min.css';
 import firebase from 'firebase/app';
 import { getDatabase, ref, onValue} from "firebase/database";
-import { WaitlistCourses } from '../Components/waitlistPage/WaitlistCourses';
+import WaitlistCourses from '../Components/waitlistPage/WaitlistCourses';
 
 const WaitlistPage = ({
     student,
@@ -20,7 +20,7 @@ const WaitlistPage = ({
 
     const [waitlistData, setWaitlistData] = useState(data);
 
-    return(
+    return (
         <div>
             <div className="section">
                 <h2 className="courseHeading">Waitlist</h2>
@@ -32,7 +32,7 @@ const WaitlistPage = ({
             <WaitlistCourses waitlist={waitlistData} setWaitlistData={setWaitlistData} dataRef={dataRef}/>
 
         </div>
-    )
+    );
 }
 
 export default WaitlistPage;

@@ -1,6 +1,11 @@
-export function deleteCourses(dataRef, setWaitlistData) {
+import { useEffect } from "react";
+
+export function deleteCourses(setWaitlistData, dataRef, waitlist) {
     let coursesRef = dataRef;
     console.log(coursesRef);
-    setWaitlistData([]);
-    coursesRef.remove();
+    useEffect(() => {
+        setWaitlistData([]);
+    }, [waitlist])
+    // setWaitlistData([]);
+    // coursesRef.remove();
 }
