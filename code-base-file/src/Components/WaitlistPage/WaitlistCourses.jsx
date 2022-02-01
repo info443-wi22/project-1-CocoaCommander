@@ -11,6 +11,7 @@ const WaitlistCourses = ({
     let toDisplay = [];
 
     console.log(setWaitlistData);
+    console.log(waitlist);
 
     // for (let i = 0; i < waitlist.length; i++) {
     //     let course = waitlist[i];
@@ -38,7 +39,7 @@ const WaitlistCourses = ({
     return (
         <div className="section">
             {
-            toDisplay.length === 0 ? 
+            waitlist.length === 0 ? 
             "You aren't on the waitlist for any classes yet! (You need to click the register button twice.)" : 
             <WaitListCourseSectionWrapper body={toDisplay} />
             }

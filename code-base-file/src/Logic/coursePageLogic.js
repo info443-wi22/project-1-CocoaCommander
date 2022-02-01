@@ -1,3 +1,5 @@
+import { getDatabase, ref, onValue, set} from "firebase/database";
+
 export function doesClassOverlap() {
     return (startTimeOld, endTimeOld, startTimeNew, endTimeNew) => {
         let stOld = new Date("01/01/2000 " + startTimeOld);
@@ -65,6 +67,8 @@ export function checkForOverlappingClasses(OVERLAPS) {
 }
 
 export function handleClassRegistration(schedule, course, setSchedule) {
+    const db = getDatabase();
+
     return (courseArr) => {
         let newSchedule = [...schedule];
         let newCourse = {
@@ -86,5 +90,6 @@ export function handleClassRegistration(schedule, course, setSchedule) {
         }
         newSchedule.push(newCourse);
         setSchedule(newSchedule);
+        set(ref(db, 'student/schedule'), newSchedule);
     };
 }
