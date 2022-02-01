@@ -14,5 +14,5 @@ The candidate element that we want to analyze is the coursePage.js file.
 # Part 2: Unit Testing
 To run the test, navigate to the code-base-file and into the src folder. Then type "npm install" and then "npm run test" to run the test.
 
-Test coverage screenshot:
+## Test coverage
 <img src="https://user-images.githubusercontent.com/63211951/151899115-abf5f3de-26d7-449b-90f0-03af5d3950d8.png" width=50% height=50%>
