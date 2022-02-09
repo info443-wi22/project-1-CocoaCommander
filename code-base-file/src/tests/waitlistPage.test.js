@@ -1,10 +1,11 @@
 import '@testing-library/jest-dom'
 import { findAllByRole, render, screen } from '@testing-library/react';
-import {deleteCourses} from '../Logic/waitlistPageLogic';
+import {deleteCourses, getScheduleDay} from '../Logic/waitlistPageLogic';
 import WaitlistPage from '../Pages/WaitlistPage'
 // import ref from './setupTests'
-import { getDatabase, ref, get, onValue } from 'firebase/database';
+import { getDatabase, ref, get, onValue, set } from 'firebase/database';
 import SAMPLE_STUDENT from '../EXAMPLE_STUDENT.json'
+import WaitlistCourses from '../Components/waitlistPage/WaitlistCourses';
 
 
 describe('Waitlist Page tests', () => {
@@ -119,7 +120,7 @@ describe('Waitlist Page tests', () => {
     });
 
     //if there's waitlist, display waitlist
-    test('Displays the right current waitlist of user', () => {
+    test('Displays the appropriate waitlist for user', () => {
         const studentWithWaitlist = {
             "studentID": 1865214,
             "studentFName": "Ryan",
@@ -272,40 +273,41 @@ describe('Waitlist Page tests', () => {
                 }
             ]
         };
+
+        let setWaitlistData = () => {}
+        const db = getDatabase();
+        let dataRef = ref(db, 'student/schedule');
+
         render(
-            <WaitlistPage student={studentWithWaitlist} />
+            <WaitlistCourses waitlist={studentWithWaitlist.waitlist} setWaitlistData={setWaitlistData} dataRef={dataRef}/>
         )
-        expect(screen.getByText("Pending")).toBeInTheDocument();
+        expect(screen.getByText("CSE 373 (4)")).toBeInTheDocument();
     });
 
     test('Displays the correct abbreviation for schedule', () => {
-        const emptyWaitlist = [];
-        render(
-            <WaitlistPage student={SAMPLE_STUDENT} course={emptyWaitlist} />
-        )
-        expect(typeof WaitlistPage).toBe('function');
-    });
-
-
-
-    //remove a course in waitlist
-    test('removes a course successfully from waitlist', () => {
-        const db = getDatabase();
-        //add a sample class data
-    
-        let setWaitlistData = () => {
-                // do nothing
-        }
-        // let dataRef = ref(db, 'student/schedule');
-        // deleteCourses(dataRef={dataRef}, setWaitlistData={setWaitlistData});
-        // let result = get('student/schedule');
-    
-        let data = [];
-    
-        // onValue(dataRef, (snapshot) => {
-        //     data = snapshot.val();
-        //   });
-    
-        expect(data.length).toBe(0);
+        let result = [];
+        result.push(getScheduleDay({"schedule": [
+            {
+                "day": "Thursday", 
+                "startTime": "9:30 AM", 
+                "endTime": "10:20 AM"
+            }
+        ]}));
+        result.push(getScheduleDay({"schedule": [
+            {
+                "day": "Saturday", 
+                "startTime": "9:30 AM", 
+                "endTime": "10:20 AM"
+            }
+        ]}));
+        result.push(getScheduleDay({"schedule": [
+            {
+                "day": "Monday", 
+                "startTime": "9:30 AM", 
+                "endTime": "10:20 AM"
+            }
+        ]}));
+        let expected = ["Th", "Sa", "M"];
+        expect(result).toStrictEqual(expected);
     });
 })

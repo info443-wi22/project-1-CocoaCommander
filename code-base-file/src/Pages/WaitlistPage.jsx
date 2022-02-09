@@ -6,7 +6,6 @@ import WaitlistCourses from '../Components/waitlistPage/WaitlistCourses';
 
 const WaitlistPage = ({
     student,
-    course
 }) => {
     // //extract courses from firebase
     const db = getDatabase();

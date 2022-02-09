@@ -36,7 +36,7 @@ const WaitlistCourses = ({
     return (
         <div className="section">
             {
-            toDisplay.length === 0 ? 
+            waitlist.length === 0 ? 
             "You aren't on the waitlist for any classes yet! (You need to click the register button twice.)" : 
             <WaitListCourseSectionWrapper body={toDisplay} />
             }
