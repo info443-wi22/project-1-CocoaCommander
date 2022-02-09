@@ -10,8 +10,6 @@ const WaitlistCourses = ({
 }) => {
     let toDisplay = [];
 
-    console.log(setWaitlistData);
-
     // for (let i = 0; i < waitlist.length; i++) {
     //     let course = waitlist[i];
     //     toDisplay.push(<WaitlistCourseSections course={course} dataRef={props.dataRef}/>)
@@ -21,7 +19,7 @@ const WaitlistCourses = ({
         return (
             <WaitlistCourseSections waitlist={waitlist} course={course} dataRef={dataRef} setWaitlistData={setWaitlistData} key={i} />
         )
-    })
+    });
 
     const WaitListCourseSectionWrapper = ({
         body

@@ -3,7 +3,6 @@ import WaitlistSectionDetail from './WaitlistSectionDetail';
 
 const WaitlistCourseSections = (props) => {
     let course = props.course;
-    console.log(props.setWaitlistData);
     let courseName = course.department + " " + course.number + " (" + course.credits + ")";
     return course.courseSections.map((section, i) => {
         let schedule = getScheduleDay(section)

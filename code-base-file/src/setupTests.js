@@ -89,8 +89,6 @@ class MockSnapshot {
 
 jest.mock('firebase/database', () => {
 
-  console.log("initializing mock firebase");
-
   const db = new MockDatabase();
 
   const mockDatabase = {

@@ -6,8 +6,6 @@ import WaitlistPage from '../Pages/WaitlistPage'
 import { getDatabase, ref, get, onValue } from 'firebase/database';
 import SAMPLE_STUDENT from '../EXAMPLE_STUDENT.json'
 
-//initialize the database for waitlist
-console.log(getDatabase());
 
 describe('Waitlist Page tests', () => {
     test('Outputs the waitlist header', () => {

@@ -9,8 +9,6 @@ const WaitlistSectionDetail = (props) => {
     const dataRef = props.dataRef;
     const waitlist = props.waitlist;
 
-    console.log(setWaitlistData);
-
     return (
         <tr>
             <td>
