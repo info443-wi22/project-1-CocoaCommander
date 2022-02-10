@@ -7,15 +7,10 @@ import WaitlistCourses from '../Components/waitlistPage/WaitlistCourses';
 const WaitlistPage = ({
     student,
 }) => {
-    // //extract courses from firebase
     const db = getDatabase();
     let dataRef = ref(db, 'student/schedule');
 
     let data = student.waitlist;
-    // let data = [];
-    // // onValue(dataRef, (snapshot) => {
-    // //     data = snapshot.val();
-    // //   });
 
     const [waitlistData, setWaitlistData] = useState(data);
 

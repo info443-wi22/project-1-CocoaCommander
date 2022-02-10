@@ -3,16 +3,12 @@ import React from 'react';
 import WaitlistCourseSections from './WaitlistCourseSections';
 import 'font-awesome/css/font-awesome.min.css';
 
-const WaitlistCourses = ({
-    waitlist, 
-    setWaitlistData,
-    dataRef
-}) => {
+const WaitlistCourses = props => {
     let toDisplay = [];
 
-    toDisplay = waitlist.map((course, i) => {
+    toDisplay = props.waitlist.map((course, i) => {
         return (
-            <WaitlistCourseSections waitlist={waitlist} course={course} dataRef={dataRef} setWaitlistData={setWaitlistData} key={i} />
+            <WaitlistCourseSections course={course} key={i} props={props}/>
         )
     });
 
@@ -31,7 +27,7 @@ const WaitlistCourses = ({
     return (
         <div className="section">
             {
-            waitlist.length === 0 ? 
+            props.waitlist.length === 0 ? 
             "You aren't on the waitlist for any classes yet! (You need to click the register button twice.)" : 
             <WaitListCourseSectionWrapper body={toDisplay} />
             }

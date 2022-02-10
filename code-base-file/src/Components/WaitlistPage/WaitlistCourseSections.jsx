@@ -3,16 +3,14 @@ import WaitlistSectionDetail from './WaitlistSectionDetail';
 import { getScheduleDay } from '../../Logic/waitlistPageLogic';
 
 const WaitlistCourseSections = ({
-    waitlist,
     course,
-    dataRef,
-    setWaitlistData
+    props
 }) => {
-    let courseName = course.department + " " + course.number + " (" + course.credits + ")";
+    let courseNameAndCredits = course.department + " " + course.number + " (" + course.credits + ")";
     return course.courseSections.map((section, i) => {
-        let schedule = getScheduleDay(section)
+        let dayOfCourse = getScheduleDay(section)
         return (
-            <WaitlistSectionDetail courseName={courseName} section={section} schedule={schedule} setWaitlistData={setWaitlistData} dataRef={dataRef} waitlist={waitlist} key={i}/>
+            <WaitlistSectionDetail courseNameAndCredits={courseNameAndCredits} section={section} dayOfCourse={dayOfCourse} props={props} index={i} key={i}/>
         );
     });
 }

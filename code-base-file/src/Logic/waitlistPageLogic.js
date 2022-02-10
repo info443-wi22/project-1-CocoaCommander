@@ -9,9 +9,6 @@ export function deleteCourses(setWaitlistData, dataRef, waitlist) {
         set(coursesRef, []);
 
     }, [waitlist])
-    // set(coursesRef, []);
-    // setWaitlistData([]);
-    // coursesRef.remove();
 }
 
 export function getScheduleDay(section) {
