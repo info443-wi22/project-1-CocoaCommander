@@ -38,9 +38,7 @@ const CoursePage = ({
         <div>
             <CourseOverview course={course}/>
             <ClassOverlapAlerts
-                // classList is an Array of all the class sections a student has registered for
                 classList={student.classList} 
-                // courseData is an Array of all the sections in a course
                 courseData={course.courseSections} 
                 illegalClass={illegalClass}
                 OVERLAPS={OVERLAPS}

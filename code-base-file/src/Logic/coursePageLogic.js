@@ -13,13 +13,10 @@ export function doesClassOverlap() {
 export function validateCourseAdditions(potentialCourses, setPotentialCourses, setOverlapErrors) {
     return (course) => {
         let coursesToAdd = [...potentialCourses];
-
-        // If you've already selected the course, remove and exit
         for (let courseName in potentialCourses) {
             if (course === potentialCourses[courseName]) {
                 coursesToAdd.splice(0, 2);
                 setPotentialCourses(coursesToAdd);
-                // message that says successfully removed section courseName
                 setOverlapErrors("Successfully removed all of your sections.");
                 return;
             }

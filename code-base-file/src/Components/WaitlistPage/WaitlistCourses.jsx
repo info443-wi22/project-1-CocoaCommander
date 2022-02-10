@@ -1,5 +1,5 @@
 import React from 'react';
-import { deleteCourses} from '../../Logic/waitlistPageLogic';
+// import { deleteCourses} from '../../Logic/waitlistPageLogic';
 import WaitlistCourseSections from './WaitlistCourseSections';
 import 'font-awesome/css/font-awesome.min.css';
 
@@ -9,11 +9,6 @@ const WaitlistCourses = ({
     dataRef
 }) => {
     let toDisplay = [];
-
-    // for (let i = 0; i < waitlist.length; i++) {
-    //     let course = waitlist[i];
-    //     toDisplay.push(<WaitlistCourseSections course={course} dataRef={props.dataRef}/>)
-    // }
 
     toDisplay = waitlist.map((course, i) => {
         return (

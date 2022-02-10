@@ -1,8 +1,8 @@
 import React from 'react';
 import { SectionCard } from './SectionCard';
+import { getScheduleDay } from '../../Logic/waitlistPageLogic';
 
 export function MainSectionCards(props) {
-    // adds the correct course to the list but some of the properties of the new class object have wrong data type, fix later
 
     let mainSection = props.sectionChunk;
     let minorSections = mainSection.sections;
@@ -29,19 +29,7 @@ export function MainSectionCards(props) {
         props.handleOverlapErrors(mainSectionName);
     };
 
-    let schedule = "";
-    for (let i = 0; i < mainSection.schedule.length; i++) {
-        switch (mainSection.schedule[i].day) {
-            case "Thursday":
-                schedule += mainSection.schedule[i].day.substring(0, 2);
-                break;
-            case "Saturday":
-                schedule += mainSection.schedule[i].day.substring(0, 2);
-                break;
-            default:
-                schedule += mainSection.schedule[i].day.charAt(0);
-        }
-    }
+    let schedule = getScheduleDay(mainSection);
 
     return (
         <tbody>

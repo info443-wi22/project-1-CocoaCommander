@@ -1,13 +1,14 @@
 import React from 'react';
-import { deleteCourses} from '../../Logic/waitlistPageLogic';
+import { deleteCourses } from '../../Logic/waitlistPageLogic';
 
-const WaitlistSectionDetail = (props) => {
-    let courseName = props.courseName;
-    let section = props.section;
-    let schedule = props.schedule;
-    const setWaitlistData = props.setWaitlistData;
-    const dataRef = props.dataRef;
-    const waitlist = props.waitlist;
+const WaitlistSectionDetail = ({
+    courseName,
+    section,
+    schedule,
+    setWaitlistData,
+    dataRef,
+    waitlist
+}) => {
 
     return (
         <tr>
